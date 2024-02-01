@@ -21,11 +21,13 @@ class Home extends StatelessWidget {
       ),
       // ignore: prefer_const_constructors
       body: Center(
-        child: const Image(
-          image: AssetImage('assets/future_city.jpg'),
-          fit: BoxFit.cover,
+        child: ElevatedButton(
+          onPressed: () {},
+          child: const Text('Click'),
+          color: Colors.black38,
         ),
       ),
+
       // ignore: prefer_const_constructors
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
