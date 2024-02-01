@@ -3,5 +3,9 @@ import 'package:flutter/material.dart';
 // ignore: prefer_const_constructors
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const Text('Hey Billy'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('First App'),
+        ),
+      ),
     ));
