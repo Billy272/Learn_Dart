@@ -6,6 +6,8 @@ void main() => runApp(MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: const Text('First App'),
+          centerTitle: true,
         ),
+        body: const Text('Hello World'),
       ),
     ));
