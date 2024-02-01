@@ -21,15 +21,8 @@ class Home extends StatelessWidget {
       ),
       // ignore: prefer_const_constructors
       body: Center(
-        child: const Text(
-          'Hello World!!',
-          style: TextStyle(
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-            letterSpacing: 2.0,
-            color: Colors.blue,
-            fontFamily: 'IndieFlower',
-          ),
+        child: const Image(
+          image: AssetImage('../assets/future_city.jpg'),
         ),
       ),
       // ignore: prefer_const_constructors
