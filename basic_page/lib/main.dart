@@ -22,7 +22,7 @@ class Home extends StatelessWidget {
       // ignore: prefer_const_constructors
       body: Center(
         child: const Image(
-          image: AssetImage('../assets/future_city.jpg'),
+          image: AssetImage('assets/future_city.jpg'),
         ),
       ),
       // ignore: prefer_const_constructors
