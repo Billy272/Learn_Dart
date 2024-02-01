@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 void main() => runApp(MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('First App'),
-          centerTitle: true,
-        ),
-        body: const Text('Hello World'),
-      ),
+          appBar: AppBar(
+            title: const Text('First App'),
+            centerTitle: true,
+          ),
+          body: const Center(
+            child: Text('Hello World'),
+          )),
     ));
