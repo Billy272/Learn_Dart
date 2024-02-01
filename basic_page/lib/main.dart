@@ -12,7 +12,14 @@ void main() => runApp(
           ),
           // ignore: prefer_const_constructors
           body: Center(
-            child: const Text('Hello World'),
+            child: const Text(
+              'Hello World!!',
+              style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 2.0,
+                  color: Colors.blue),
+            ),
           ),
           // ignore: prefer_const_constructors
           floatingActionButton: FloatingActionButton(
