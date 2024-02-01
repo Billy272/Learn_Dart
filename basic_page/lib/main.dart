@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // ignore: prefer_const_constructors
 void main() => runApp(
       const MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Home(),
       ),
     );
