@@ -8,6 +8,7 @@ void main() => runApp(
           appBar: AppBar(
             title: const Text('First App'),
             centerTitle: true,
+            backgroundColor: const Color.fromARGB(255, 5, 255, 218),
           ),
           // ignore: prefer_const_constructors
           body: Center(
