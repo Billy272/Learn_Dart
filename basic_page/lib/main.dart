@@ -23,6 +23,7 @@ class Home extends StatelessWidget {
       body: Center(
         child: const Image(
           image: AssetImage('assets/future_city.jpg'),
+          fit: BoxFit.cover,
         ),
       ),
       // ignore: prefer_const_constructors
