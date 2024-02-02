@@ -24,7 +24,6 @@ class Home extends StatelessWidget {
         child: ElevatedButton(
           onPressed: () {},
           child: const Text('Click'),
-          color: Colors.black38,
         ),
       ),
 
