@@ -20,7 +20,12 @@ class Home extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 5, 255, 218),
       ),
       // ignore: prefer_const_constructors
-      body: Center(),
+      body: Center(
+          child: IconButton(
+        onPressed: () {},
+        icon:
+            const Icon(Icons.notification_add, size: 50.0, color: Colors.amber),
+      )),
 
       // ignore: prefer_const_constructors
       floatingActionButton: FloatingActionButton(
