@@ -20,16 +20,14 @@ class Home extends StatelessWidget {
         backgroundColor: const Color.fromARGB(255, 5, 255, 218),
       ),
       // ignore: prefer_const_constructors
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {},
-          child: const Text('Click'),
-        ),
-      ),
+      body: Center(),
 
       // ignore: prefer_const_constructors
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          // ignore: avoid_print
+          print('Clicked');
+        },
         backgroundColor: const Color.fromARGB(255, 5, 255, 218),
         // ignore: prefer_const_constructors
         child: Text('Click'),
