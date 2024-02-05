@@ -20,9 +20,21 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.black,
       ),
       // ignore: prefer_const_constructors
-      body: Padding(
-        padding: const EdgeInsets.all(170.0),
-        child: const Text('Hello World'),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: <Widget>[
+          const Text("My App"),
+          FloatingActionButton(
+            onPressed: () {},
+            child: const Text('Click Me'),
+          ),
+          Container(
+            color: const Color.fromARGB(255, 2, 255, 213),
+            padding: const EdgeInsets.all(30),
+            margin: const EdgeInsets.all(30),
+            child: const Text('App Container'),
+          )
+        ],
       ),
       // ignore: prefer_const_constructors
       floatingActionButton: FloatingActionButton(
