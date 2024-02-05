@@ -75,3 +75,17 @@ class Dahapp extends StatelessWidget {
     );
   }
 }
+
+class Test extends StatefulWidget {
+  const Test({super.key});
+
+  @override
+  State<Test> createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<Test> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
