@@ -7,9 +7,15 @@ void main() {
   ));
 }
 
-class Dahapp extends StatelessWidget {
-  const Dahapp({super.key});
+class Dahapp extends StatefulWidget {
+  const Dahapp({Key? key}) : super(key: key);
 
+  @override
+  // ignore: library_private_types_in_public_api
+  _DahappState createState() => _DahappState();
+}
+
+class _DahappState extends State<Dahapp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,19 +79,5 @@ class Dahapp extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class Test extends StatefulWidget {
-  const Test({super.key});
-
-  @override
-  State<Test> createState() => _MyWidgetState();
-}
-
-class _MyWidgetState extends State<Test> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }
