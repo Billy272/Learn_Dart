@@ -34,18 +34,18 @@ class Home extends StatelessWidget {
                 child: const Text('I')),
           ),
           Expanded(
-            flex: 2,
+            flex: 1,
             child: Container(
                 padding: const EdgeInsets.all(30),
                 color: const Color.fromARGB(255, 216, 43, 214),
-                child: const Text('Love')),
+                child: const Text('L')),
           ),
           Expanded(
-            flex: 2,
+            flex: 1,
             child: Container(
                 padding: const EdgeInsets.all(30),
                 color: const Color.fromARGB(255, 223, 4, 4),
-                child: const Text('You')),
+                child: const Text('Y')),
           ),
         ],
       ),
