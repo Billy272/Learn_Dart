@@ -23,15 +23,18 @@ class Dahapp extends StatelessWidget {
       body: const Padding(
         padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text('COMPANY:',
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.white)),
+            SizedBox(height: 10),
             Text('The Dah Great Company',
                 style: TextStyle(
                     fontSize: 15, color: Color.fromARGB(255, 170, 255, 1))),
+            SizedBox(height: 30),
           ],
         ),
       ),
