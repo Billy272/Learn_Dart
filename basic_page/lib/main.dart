@@ -21,13 +21,21 @@ class Home extends StatelessWidget {
       ),
       // ignore: prefer_const_constructors
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
+          const Row(
+            children: <Widget>[
+              Text("Data"),
+            ],
+          ),
           Container(
               padding: const EdgeInsets.all(30),
               color: Colors.blue,
               child: const Text('I')),
           Container(
               padding: const EdgeInsets.all(50),
+              margin: const EdgeInsets.all(20),
               color: const Color.fromARGB(255, 216, 43, 214),
               child: const Text('Love')),
           Container(
