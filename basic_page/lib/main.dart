@@ -17,16 +17,13 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: const Text('First App'),
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 5, 255, 218),
+        backgroundColor: Colors.black,
       ),
       // ignore: prefer_const_constructors
-      body: Center(
-          child: IconButton(
-        onPressed: () {},
-        icon:
-            const Icon(Icons.notification_add, size: 50.0, color: Colors.amber),
-      )),
-
+      body: Padding(
+        padding: const EdgeInsets.all(170.0),
+        child: const Text('Hello World'),
+      ),
       // ignore: prefer_const_constructors
       floatingActionButton: FloatingActionButton(
         onPressed: () {
