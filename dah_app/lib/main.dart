@@ -31,6 +31,10 @@ class Dahapp extends StatelessWidget {
                 radius: 100,
               ),
             ),
+            Divider(
+              height: 80,
+              color: Colors.yellowAccent,
+            ),
             Text('CITY:',
                 style: TextStyle(
                     fontSize: 20,
