@@ -24,8 +24,14 @@ class Dahapp extends StatelessWidget {
         padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
         child: Column(
           children: <Widget>[
-            Text('Hello, Dah!',
-                style: TextStyle(fontSize: 20, color: Colors.white)),
+            Text('COMPANY:',
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white)),
+            Text('The Dah Great Company',
+                style: TextStyle(
+                    fontSize: 15, color: Color.fromARGB(255, 170, 255, 1))),
           ],
         ),
       ),
