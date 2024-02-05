@@ -1,0 +1,52 @@
+# Android
+android/
+build/
+
+# iOS
+ios/
+Pods/
+*.lock
+*.xcworkspace
+*.pbxproj
+GeneratedPluginRegistrant.*
+
+# macOS
+macos/ # if using flutter create .
+
+# Web
+web/
+build/
+
+# Windows
+windows/
+*.suo
+*.user
+*.vscode
+*.idea/
+
+# Flutter
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.dart_tool/
+.pub/
+.packages
+.packages.lock
+
+# IDE/Editor specific
+.vscode/
+.idea/
+*.iml
+*.ipr
+
+# macOS
+.DS_Store
+
+# Flutter SDK dependencies
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Others
+*.log
+*.tmp
+*.bak
