@@ -35,6 +35,30 @@ class Dahapp extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 15, color: Color.fromARGB(255, 170, 255, 1))),
             SizedBox(height: 30),
+            Text('Year Founded:',
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white)),
+            SizedBox(height: 10),
+            Text('2024',
+                style: TextStyle(
+                    fontSize: 15, color: Color.fromARGB(255, 170, 255, 1))),
+            SizedBox(height: 30),
+            Row(
+              children: <Widget>[
+                Icon(
+                  Icons.email,
+                  color: Color.fromARGB(255, 0, 0, 0),
+                ),
+                SizedBox(width: 10),
+                Text('info@dahgreat.co.ke',
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 174, 255, 1))),
+              ],
+            )
           ],
         ),
       ),
