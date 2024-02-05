@@ -2,16 +2,20 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MaterialApp(
-    home: Dah_App(),
+    debugShowCheckedModeBanner: false,
+    home: Dahapp(),
   ));
 }
 
-// ignore: camel_case_types
-class Dah_App extends StatelessWidget {
-  const Dah_App({super.key});
+class Dahapp extends StatelessWidget {
+  const Dahapp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Dah Great App'),
+      ),
+    );
   }
 }
