@@ -21,12 +21,13 @@ class Home extends StatelessWidget {
       ),
       // ignore: prefer_const_constructors
       body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
           const Text("My App"),
           FloatingActionButton(
             onPressed: () {},
-            child: const Text('Click Me'),
+            child: const Text('Click'),
           ),
           Container(
             color: const Color.fromARGB(255, 2, 255, 213),
