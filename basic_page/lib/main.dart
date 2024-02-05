@@ -20,28 +20,29 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.black,
       ),
       // ignore: prefer_const_constructors
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.end,
+      body: Row(
         children: <Widget>[
-          const Row(
-            children: <Widget>[
-              Text("Data"),
-            ],
+          Expanded(
+            flex: 1,
+            child: Container(
+                padding: const EdgeInsets.all(30),
+                color: Colors.blue,
+                child: const Text('I')),
           ),
-          Container(
-              padding: const EdgeInsets.all(30),
-              color: Colors.blue,
-              child: const Text('I')),
-          Container(
-              padding: const EdgeInsets.all(50),
-              margin: const EdgeInsets.all(20),
-              color: const Color.fromARGB(255, 216, 43, 214),
-              child: const Text('Love')),
-          Container(
-              padding: const EdgeInsets.all(40),
-              color: const Color.fromARGB(255, 223, 4, 4),
-              child: const Text('You')),
+          Expanded(
+            flex: 3,
+            child: Container(
+                padding: const EdgeInsets.all(30),
+                color: const Color.fromARGB(255, 216, 43, 214),
+                child: const Text('Love')),
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(
+                padding: const EdgeInsets.all(30),
+                color: const Color.fromARGB(255, 223, 4, 4),
+                child: const Text('You')),
+          ),
         ],
       ),
       // ignore: prefer_const_constructors
