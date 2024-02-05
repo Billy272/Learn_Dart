@@ -23,6 +23,10 @@ class Home extends StatelessWidget {
       body: Row(
         children: <Widget>[
           Expanded(
+            flex: 4,
+            child: Image.asset('assets/future_city.jpg'),
+          ),
+          Expanded(
             flex: 1,
             child: Container(
                 padding: const EdgeInsets.all(30),
@@ -30,7 +34,7 @@ class Home extends StatelessWidget {
                 child: const Text('I')),
           ),
           Expanded(
-            flex: 3,
+            flex: 2,
             child: Container(
                 padding: const EdgeInsets.all(30),
                 color: const Color.fromARGB(255, 216, 43, 214),
