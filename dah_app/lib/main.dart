@@ -16,6 +16,14 @@ class Dahapp extends StatefulWidget {
 }
 
 class _DahappState extends State<Dahapp> {
+  int population = 1000000;
+
+  void _incPopulation() {
+    setState(() {
+      population += 12000;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +33,11 @@ class _DahappState extends State<Dahapp> {
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 6, 251, 255),
         elevation: 0.0,
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incPopulation,
+        backgroundColor: const Color.fromARGB(255, 226, 255, 5),
+        child: const Icon(Icons.add),
       ),
       body: const Padding(
         padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
@@ -58,6 +71,16 @@ class _DahappState extends State<Dahapp> {
                     color: Colors.white)),
             SizedBox(height: 10),
             Text('2024',
+                style: TextStyle(
+                    fontSize: 15, color: Color.fromARGB(255, 170, 255, 1))),
+            SizedBox(height: 30),
+            Text('Population Size:',
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white)),
+            SizedBox(height: 10),
+            Text('$population',
                 style: TextStyle(
                     fontSize: 15, color: Color.fromARGB(255, 170, 255, 1))),
             SizedBox(height: 30),
