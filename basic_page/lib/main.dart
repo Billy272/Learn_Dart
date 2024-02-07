@@ -23,11 +23,6 @@ class _BasicState extends State<Basic> {
         author: 'Oscar Wilde')
   ];
 
-  List<String> author = [
-    'Friedrich Nietzsche',
-    'Oscar Wilde',
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
