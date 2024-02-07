@@ -26,11 +26,11 @@ class _BasicState extends State<Basic> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: const Color.fromARGB(255, 0, 249, 100),
       appBar: AppBar(
         title: const Text('Basic Page'),
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+        backgroundColor: const Color.fromARGB(255, 0, 238, 255),
       ),
       body: Column(
         children: quote.map((quotes) {
