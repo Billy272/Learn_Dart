@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'quote.dart';
 
 void main() => runApp(const MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -13,9 +14,13 @@ class Basic extends StatefulWidget {
 }
 
 class _BasicState extends State<Basic> {
-  List<String> quote = [
-    'Without music, life would be a mistake.',
-    'Always forgive your enemies; nothing annoys them so much.',
+  List<Quote> quote = [
+    Quote(
+        text: 'Without music, life would be a mistake. ',
+        author: 'Friedrich Nietzsche'),
+    Quote(
+        text: 'Always forgive your enemies; nothing annoys them so much. ',
+        author: 'Oscar Wilde')
   ];
 
   List<String> author = [
@@ -34,7 +39,7 @@ class _BasicState extends State<Basic> {
       ),
       body: Column(
         children: quote.map((quotes) {
-          return Text(quotes, author: author[quote.indexOf(quotes)]);
+          return Text('${quotes.text} - ${quotes.author}');
         }).toList(),
       ),
     );
