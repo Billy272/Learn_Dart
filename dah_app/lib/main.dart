@@ -28,9 +28,6 @@ class _DahappState extends State<Dahapp> {
 
   @override
   Widget build(BuildContext context) {
-    const text = Text('$population',
-        style:
-            TextStyle(fontSize: 15, color: Color.fromARGB(255, 170, 255, 1)));
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 4, 158, 235),
       appBar: AppBar(
@@ -85,7 +82,9 @@ class _DahappState extends State<Dahapp> {
                     fontWeight: FontWeight.bold,
                     color: Colors.white)),
             SizedBox(height: 10),
-            text,
+            Text('$population',
+                style: TextStyle(
+                    fontSize: 15, color: Color.fromARGB(255, 170, 255, 1))),
             SizedBox(height: 30),
             Row(
               children: <Widget>[
