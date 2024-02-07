@@ -18,6 +18,11 @@ class _BasicState extends State<Basic> {
     'Always forgive your enemies; nothing annoys them so much.',
   ];
 
+  List<String> author = [
+    'Friedrich Nietzsche',
+    'Oscar Wilde',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +34,7 @@ class _BasicState extends State<Basic> {
       ),
       body: Column(
         children: quote.map((quotes) {
-          return Text(quotes);
+          return Text(quotes, author: author[quote.indexOf(quotes)]);
         }).toList(),
       ),
     );
