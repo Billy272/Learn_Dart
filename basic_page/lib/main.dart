@@ -1,63 +1,36 @@
 import 'package:flutter/material.dart';
 
-// ignore: prefer_const_constructors
-void main() => runApp(
-      const MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Home(),
-      ),
-    );
+void main() => runApp(const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Basic(),
+    ));
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class Basic extends StatefulWidget {
+  const Basic({super.key});
+
+  @override
+  State<Basic> createState() => _BasicState();
+}
+
+class _BasicState extends State<Basic> {
+  List<String> quote = [
+    'Without music, life would be a mistake.',
+    'Always forgive your enemies; nothing annoys them so much.',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.blueGrey,
       appBar: AppBar(
-        title: const Text('First App'),
+        title: const Text('Basic Page'),
         centerTitle: true,
-        backgroundColor: Colors.black,
+        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
       ),
-      // ignore: prefer_const_constructors
-      body: Row(
-        children: <Widget>[
-          Expanded(
-            flex: 4,
-            child: Image.asset('assets/future_city.jpg'),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-                padding: const EdgeInsets.all(30),
-                color: Colors.blue,
-                child: const Text('I')),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-                padding: const EdgeInsets.all(30),
-                color: const Color.fromARGB(255, 216, 43, 214),
-                child: const Text('L')),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-                padding: const EdgeInsets.all(30),
-                color: const Color.fromARGB(255, 223, 4, 4),
-                child: const Text('Y')),
-          ),
-        ],
-      ),
-      // ignore: prefer_const_constructors
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // ignore: avoid_print
-          print('Clicked');
-        },
-        backgroundColor: const Color.fromARGB(255, 5, 255, 218),
-        // ignore: prefer_const_constructors
-        child: Text('Click'),
+      body: Column(
+        children: quote.map((quotes) {
+          return Text(quotes);
+        }).toList(),
       ),
     );
   }
