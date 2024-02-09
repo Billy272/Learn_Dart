@@ -23,6 +23,24 @@ class _BasicState extends State<Basic> {
         author: 'Oscar Wilde')
   ];
 
+  Widget quoteTemplate(quote) {
+    return Card(
+      margin: const EdgeInsets.fromLTRB(15, 15, 16, 0),
+      child: Column(children: <Widget>[
+        Text(
+          quote.text,
+          style: const TextStyle(
+              fontSize: 18, color: Color.fromARGB(255, 1, 85, 85)),
+        ),
+        Text(
+          quote.author,
+          style: const TextStyle(
+              fontSize: 18, color: Color.fromARGB(255, 20, 85, 89)),
+        ),
+      ]),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
