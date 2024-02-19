@@ -32,11 +32,13 @@ class _BasicState extends State<Basic> {
           style: const TextStyle(
               fontSize: 18, color: Color.fromARGB(255, 1, 85, 85)),
         ),
+        const SizedBox(height: 5),
         Text(
           quote.author,
           style: const TextStyle(
               fontSize: 18, color: Color.fromARGB(255, 20, 85, 89)),
         ),
+        const SizedBox(height: 11),
       ]),
     );
   }
