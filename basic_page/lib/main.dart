@@ -47,12 +47,12 @@ class _BasicState extends State<Basic> {
 
 class QuoteCard extends StatelessWidget {
   const QuoteCard({
-    Key key,
+    Key? key,
   }): super(key: key);
 
   @override
   Widget build(BuildContext context){
-return Card(
+  return Card(
         margin: const EdgeInsets.fromLTRB(15, 15, 16, 0),
         child: Padding(
           padding: const EdgeInsets.all(12),
@@ -71,5 +71,8 @@ return Card(
                       fontSize: 18, color: Color.fromARGB(255, 20, 85, 89)),
                 ),
                 const SizedBox(height: 11)
-           }
-}
+                     ],
+                  );
+                },
+            }
+          
