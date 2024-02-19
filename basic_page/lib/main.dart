@@ -28,20 +28,22 @@ class _BasicState extends State<Basic> {
         margin: const EdgeInsets.fromLTRB(15, 15, 16, 0),
         child: Padding(
           padding: const EdgeInsets.all(12),
-          child: Column(children: <Widget>[
-            Text(
-              quote.text,
-              style: const TextStyle(
-                  fontSize: 18, color: Color.fromARGB(255, 1, 85, 85)),
-            ),
-            const SizedBox(height: 5),
-            Text(
-              quote.author,
-              style: const TextStyle(
-                  fontSize: 18, color: Color.fromARGB(255, 20, 85, 89)),
-            ),
-            const SizedBox(height: 11),
-          ]),
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: <Widget>[
+                Text(
+                  quote.text,
+                  style: const TextStyle(
+                      fontSize: 18, color: Color.fromARGB(255, 1, 85, 85)),
+                ),
+                const SizedBox(height: 5),
+                Text(
+                  quote.author,
+                  style: const TextStyle(
+                      fontSize: 18, color: Color.fromARGB(255, 20, 85, 89)),
+                ),
+                const SizedBox(height: 11),
+              ]),
         ));
   }
 
