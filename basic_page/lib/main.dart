@@ -25,22 +25,24 @@ class _BasicState extends State<Basic> {
 
   Widget quoteTemplate(quote) {
     return Card(
-      margin: const EdgeInsets.fromLTRB(15, 15, 16, 0),
-      child: Column(children: <Widget>[
-        Text(
-          quote.text,
-          style: const TextStyle(
-              fontSize: 18, color: Color.fromARGB(255, 1, 85, 85)),
-        ),
-        const SizedBox(height: 5),
-        Text(
-          quote.author,
-          style: const TextStyle(
-              fontSize: 18, color: Color.fromARGB(255, 20, 85, 89)),
-        ),
-        const SizedBox(height: 11),
-      ]),
-    );
+        margin: const EdgeInsets.fromLTRB(15, 15, 16, 0),
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Column(children: <Widget>[
+            Text(
+              quote.text,
+              style: const TextStyle(
+                  fontSize: 18, color: Color.fromARGB(255, 1, 85, 85)),
+            ),
+            const SizedBox(height: 5),
+            Text(
+              quote.author,
+              style: const TextStyle(
+                  fontSize: 18, color: Color.fromARGB(255, 20, 85, 89)),
+            ),
+            const SizedBox(height: 11),
+          ]),
+        ));
   }
 
   @override
@@ -54,7 +56,7 @@ class _BasicState extends State<Basic> {
       ),
       body: Column(
         children: quote.map((quotes) {
-          return Text('${quotes.text} - ${quotes.author}');
+          return quoteTemplate(quotes);
         }).toList(),
       ),
     );
