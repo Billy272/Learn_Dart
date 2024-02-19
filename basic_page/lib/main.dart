@@ -23,28 +23,8 @@ class _BasicState extends State<Basic> {
         author: 'Oscar Wilde')
   ];
 
-  Widget quoteTemplate(quote) {
-    return Card(
-        margin: const EdgeInsets.fromLTRB(15, 15, 16, 0),
-        child: Padding(
-          padding: const EdgeInsets.all(12),
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: <Widget>[
-                Text(
-                  quote.text,
-                  style: const TextStyle(
-                      fontSize: 18, color: Color.fromARGB(255, 1, 85, 85)),
-                ),
-                const SizedBox(height: 5),
-                Text(
-                  quote.author,
-                  style: const TextStyle(
-                      fontSize: 18, color: Color.fromARGB(255, 20, 85, 89)),
-                ),
-                const SizedBox(height: 11),
-              ]),
-        ));
+ Widget quoteTemplate(quote) {
+    return new QouteCard();
   }
 
   @override
@@ -63,4 +43,33 @@ class _BasicState extends State<Basic> {
       ),
     );
   }
+}
+
+class QuoteCard extends StatelessWidget {
+  const QuoteCard({
+    Key key,
+  }): super(key: key);
+
+  @override
+  Widget build(BuildContext context){
+return Card(
+        margin: const EdgeInsets.fromLTRB(15, 15, 16, 0),
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: <Widget>[
+                Text(
+                  quote.text,
+                  style: const TextStyle(
+                      fontSize: 18, color: Color.fromARGB(255, 1, 85, 85)),
+                ),
+                const SizedBox(height: 5),
+                Text(
+                  quote.author,
+                  style: const TextStyle(
+                      fontSize: 18, color: Color.fromARGB(255, 20, 85, 89)),
+                ),
+                const SizedBox(height: 11)
+           }
 }
