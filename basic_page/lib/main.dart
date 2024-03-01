@@ -24,7 +24,7 @@ class _BasicState extends State<Basic> {
   ];
 
  Widget quoteTemplate(quote) {
-    return new QouteCard();
+    return QouteCard();
   }
 
   @override
