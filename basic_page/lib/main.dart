@@ -23,7 +23,7 @@ class _BasicState extends State<Basic> {
         author: 'Oscar Wilde')
   ];
 
- Widget quoteTemplate(quote) {
+  Widget quoteTemplate(quote) {
     return QouteCard();
   }
 
@@ -48,31 +48,34 @@ class _BasicState extends State<Basic> {
 class QuoteCard extends StatelessWidget {
   const QuoteCard({
     Key? key,
-  }): super(key: key);
+  }) : super(key: key);
 
   @override
-  Widget build(BuildContext context){
-  return Card(
-        margin: const EdgeInsets.fromLTRB(15, 15, 16, 0),
-        child: Padding(
-          padding: const EdgeInsets.all(12),
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: <Widget>[
-                Text(
-                  quote.text,
-                  style: const TextStyle(
-                      fontSize: 18, color: Color.fromARGB(255, 1, 85, 85)),
-                ),
-                const SizedBox(height: 5),
-                Text(
-                  quote.author,
-                  style: const TextStyle(
-                      fontSize: 18, color: Color.fromARGB(255, 20, 85, 89)),
-                ),
-                const SizedBox(height: 11)
-                     ],
-                  );
-                },
-            }
-          
+  Widget build(BuildContext context) {
+    // ignore: prefer_typing_uninitialized_variables
+    var quote;
+    return Card(
+      margin: const EdgeInsets.fromLTRB(15, 15, 16, 0),
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: <Widget>[
+            Text(
+              quote.text,
+              style: const TextStyle(
+                  fontSize: 18, color: Color.fromARGB(255, 1, 85, 85)),
+            ),
+            const SizedBox(height: 5),
+            Text(
+              quote.author,
+              style: const TextStyle(
+                  fontSize: 18, color: Color.fromARGB(255, 20, 85, 89)),
+            ),
+            const SizedBox(height: 11)
+          ],
+        ),
+      ),
+    );
+  }
+}
