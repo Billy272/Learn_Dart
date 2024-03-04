@@ -24,7 +24,7 @@ class _BasicState extends State<Basic> {
   ];
 
   Widget quoteTemplate(quote) {
-    return new QouteCard();
+    return QouteCard(quotes: quotes);
   }
 
   @override
@@ -46,9 +46,8 @@ class _BasicState extends State<Basic> {
 }
 
 class QuoteCard extends StatelessWidget {
-  const QuoteCard({
-    Key? key,
-  }) : super(key: key);
+  final Quote quotes;
+  QuoteCard({this.quotes})
 
   @override
   Widget build(BuildContext context) {
@@ -60,13 +59,13 @@ class QuoteCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
             Text(
-              quote.text,
+              quotes.text,
               style: const TextStyle(
                   fontSize: 18, color: Color.fromARGB(255, 1, 85, 85)),
             ),
             const SizedBox(height: 5),
             Text(
-              quote.author,
+              quotes.author,
               style: const TextStyle(
                   fontSize: 18, color: Color.fromARGB(255, 20, 85, 89)),
             ),
