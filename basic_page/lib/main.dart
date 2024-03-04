@@ -24,7 +24,7 @@ class _BasicState extends State<Basic> {
   ];
 
   Widget quoteTemplate(quote) {
-    return QouteCard();
+    return new QouteCard();
   }
 
   @override
@@ -52,8 +52,6 @@ class QuoteCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: prefer_typing_uninitialized_variables
-    var quote;
     return Card(
       margin: const EdgeInsets.fromLTRB(15, 15, 16, 0),
       child: Padding(
