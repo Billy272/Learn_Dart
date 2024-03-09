@@ -115,61 +115,106 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const Column(children: <Widget>[
-        SizedBox(
-          height: 30,
-        ),
-        Text(
-          'Services Offered',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
+      body: Column(
+        children: <Widget>[
+          const SizedBox(
+            height: 30,
           ),
-        ),
-        Expanded(
+          const Text(
+            'Services Offered',
+            style: TextStyle(
+              fontSize: 24, // Increased font size for the title
+              fontWeight: FontWeight.bold,
+              color: Colors.blue, // Changed title color to blue
+            ),
+          ),
+          Expanded(
             child: DefaultTabController(
-                length: 2,
-                child: Column(
-                  children: <Widget>[
-                    TabBar(
-                      labelColor: Color.fromARGB(255, 8, 173, 255),
+              length: 2,
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    padding:
+                        const EdgeInsets.all(10), // Added padding to the TabBar
+                    decoration: BoxDecoration(
+                      borderRadius:
+                          BorderRadius.circular(20), // Rounded corners
+                      color: Colors.grey[200], // Light gray background
+                    ),
+                    child: TabBar(
+                      labelColor: Colors.blue, // Changed label color to blue
                       unselectedLabelColor: Colors.black,
                       indicator: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromARGB(25, 193, 164, 164),
-                            blurRadius: 10,
-                            spreadRadius: 5,
-                          ),
-                        ],
-                        color: Color.fromARGB(25, 193, 164, 164),
+                        borderRadius: BorderRadius.circular(
+                            10), // Rounded corners for indicator
+                        color: Colors.blue
+                            .withOpacity(0.1), // Light blue indicator color
                       ),
-                      tabs: <Widget>[
+                      tabs: const <Widget>[
                         Tab(
-                            child: Column(children: <Widget>[
-                          Icon(Icons.home),
-                          Text('Home')
-                        ])),
+                          child: Column(
+                            children: <Widget>[
+                              Icon(Icons.home),
+                              SizedBox(
+                                  height:
+                                      2), // Added spacing between icon and text
+                              Text('Home'),
+                            ],
+                          ),
+                        ),
                         Tab(
-                            child: Column(children: <Widget>[
-                          Icon(Icons.build_sharp),
-                          Text('Services')
-                        ])),
+                          child: Column(
+                            children: <Widget>[
+                              Icon(Icons.build_sharp),
+                              SizedBox(
+                                  height:
+                                      2), // Added spacing between icon and text
+                              Text('Services'),
+                            ],
+                          ),
+                        ),
                         Tab(
-                            child: Column(children: <Widget>[
-                          Icon(Icons.speed),
-                          Text('Dashboard')
-                        ])),
+                          child: Column(
+                            children: <Widget>[
+                              Icon(Icons.speed),
+                              SizedBox(
+                                  height:
+                                      2), // Added spacing between icon and text
+                              Text('Dashboard'),
+                            ],
+                          ),
+                        ),
                         Tab(
-                            child: Column(children: <Widget>[
-                          Icon(Icons.warning_sharp),
-                          Text('Faults')
-                        ])),
+                          child: Column(
+                            children: <Widget>[
+                              Icon(Icons.warning_sharp),
+                              SizedBox(
+                                  height:
+                                      2), // Added spacing between icon and text
+                              Text('Faults'),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
-                  ],
-                )))
-      ]),
+                  ),
+                  const Expanded(
+                    child: TabBarView(
+                      children: <Widget>[
+                        // Content for each tab
+                        Center(child: Text('Home Content')),
+                        Center(child: Text('Services Content')),
+                        Center(child: Text('Dashboard Content')),
+                        Center(child: Text('Faults Content')),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
