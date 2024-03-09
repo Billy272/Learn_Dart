@@ -48,11 +48,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Rawyalty'),
-        centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-      ),
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -65,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
+            icon: Icon(Icons.build_sharp),
             backgroundColor: Color.fromARGB(255, 0, 0, 0),
             label: 'Services',
           ),
@@ -75,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Dashboard',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.info),
+            icon: Icon(Icons.info_outline),
             backgroundColor: Color.fromARGB(255, 0, 0, 0),
             label: 'About',
           ),
