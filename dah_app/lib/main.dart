@@ -89,8 +89,69 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Home Screen'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Rawyalty'),
+        centerTitle: true,
+      ),
+      body: const Column(children: <Widget>[
+        SizedBox(
+          height: 20,
+        ),
+        Text(
+          'Services Offered',
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Expanded(
+            child: DefaultTabController(
+                length: 4,
+                child: Column(
+                  children: <Widget>[
+                    TabBar(
+                      labelColor: Colors.blueGrey,
+                      unselectedLabelColor: Colors.black,
+                      indicator: BoxDecoration(
+                        color: Colors.grey,
+                      ),
+                      tabs: <Widget>[
+                        Tab(
+                          text: 'Service 1',
+                        ),
+                        Tab(
+                          text: 'Service 2',
+                        ),
+                        Tab(
+                          text: 'Service 3',
+                        ),
+                        Tab(
+                          text: 'Service 4',
+                        ),
+                      ],
+                    ),
+                    Expanded(
+                      child: TabBarView(
+                        children: <Widget>[
+                          Center(
+                            child: Text('Service 1'),
+                          ),
+                          Center(
+                            child: Text('Service 2'),
+                          ),
+                          Center(
+                            child: Text('Service 3'),
+                          ),
+                          Center(
+                            child: Text('Service 4'),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                )))
+      ]),
     );
   }
 }
