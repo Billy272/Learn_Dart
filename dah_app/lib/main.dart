@@ -34,6 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Widget> _children = [
     const HomeScreen(),
     const ServicesScreen(),
+    const DashBoardScreen(),
     const AboutScreen(),
     const AccountScreen(),
   ];
@@ -48,29 +49,39 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Rawyalty App'),
+        title: const Text('Rawyalty'),
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
       ),
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color.fromARGB(255, 5, 146, 217),
         onTap: onTabTapped,
         currentIndex: _currentIndex,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
+            backgroundColor: Color.fromARGB(255, 0, 0, 0),
             label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.business),
+            backgroundColor: Color.fromARGB(255, 0, 0, 0),
             label: 'Services',
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.speed),
+            backgroundColor: Color.fromARGB(255, 0, 0, 0),
+            label: 'Dashboard',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.info),
+            backgroundColor: Color.fromARGB(255, 0, 0, 0),
             label: 'About',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
+            backgroundColor: Color.fromARGB(255, 0, 0, 0),
             label: 'Account',
           ),
         ],
@@ -95,6 +106,16 @@ class ServicesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: Text('Services Screen'),
+    );
+  }
+}
+
+class DashBoardScreen extends StatelessWidget {
+  const DashBoardScreen({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text('Dashboard Screen'),
     );
   }
 }
