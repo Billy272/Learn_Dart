@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Dashboard',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.info_outline),
+            icon: Icon(Icons.library_books_outlined),
             backgroundColor: Color.fromARGB(255, 0, 0, 0),
             label: 'About',
           ),
@@ -137,37 +137,27 @@ class HomeScreen extends StatelessWidget {
                       ),
                       tabs: <Widget>[
                         Tab(
-                          text: 'Service 1',
-                        ),
+                            child: Column(children: <Widget>[
+                          Icon(Icons.home),
+                          Text('Home')
+                        ])),
                         Tab(
-                          text: 'Service 2',
-                        ),
+                            child: Column(children: <Widget>[
+                          Icon(Icons.build_sharp),
+                          Text('Services')
+                        ])),
                         Tab(
-                          text: 'Service 3',
-                        ),
+                            child: Column(children: <Widget>[
+                          Icon(Icons.speed),
+                          Text('Dashboard')
+                        ])),
                         Tab(
-                          text: 'Service 4',
-                        ),
+                            child: Column(children: <Widget>[
+                          Icon(Icons.library_books_outlined),
+                          Text('About')
+                        ])),
                       ],
                     ),
-                    Expanded(
-                      child: TabBarView(
-                        children: <Widget>[
-                          Center(
-                            child: Text('Service 1'),
-                          ),
-                          Center(
-                            child: Text('Service 2'),
-                          ),
-                          Center(
-                            child: Text('Service 3'),
-                          ),
-                          Center(
-                            child: Text('Service 4'),
-                          ),
-                        ],
-                      ),
-                    )
                   ],
                 )))
       ]),
