@@ -93,6 +93,18 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Rawyalty'),
         centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 13, 13, 13),
+        toolbarHeight: 100,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(20),
+          ),
+        ),
+        titleTextStyle: const TextStyle(
+          fontWeight: FontWeight.bold,
+          fontStyle: FontStyle.italic,
+          fontSize: 25,
+        ),
       ),
       body: const Column(children: <Widget>[
         SizedBox(
