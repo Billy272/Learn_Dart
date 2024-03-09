@@ -105,6 +105,15 @@ class HomeScreen extends StatelessWidget {
           fontStyle: FontStyle.italic,
           fontSize: 25,
         ),
+        actions: <Widget>[
+          IconButton(
+            color: Colors.white,
+            icon: const Icon(Icons.notifications),
+            onPressed: () {
+              //do something
+            },
+          ),
+        ],
       ),
       body: const Column(children: <Widget>[
         SizedBox(
