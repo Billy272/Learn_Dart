@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: Rawyalty(),
-  ));
+  runApp(const Rawyalty());
 }
 
 class Rawyalty extends StatelessWidget {
@@ -13,6 +10,7 @@ class Rawyalty extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Rawyalty App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -50,11 +48,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bottom Navigation App'),
+        title: const Text('Rawyalty App'),
       ),
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: const Color.fromARGB(255, 5, 146, 217),
         onTap: onTabTapped,
         currentIndex: _currentIndex,
         items: const [
