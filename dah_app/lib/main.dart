@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
     const HomeScreen(),
     const ServicesScreen(),
     const DashBoardScreen(),
-    const AboutScreen(),
+    const FaultScreen(),
     const AccountScreen(),
   ];
 
@@ -70,9 +70,9 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'Dashboard',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.library_books_outlined),
+            icon: Icon(Icons.warning_sharp),
             backgroundColor: Color.fromARGB(255, 0, 0, 0),
-            label: 'About',
+            label: 'Faults',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle),
@@ -117,7 +117,7 @@ class HomeScreen extends StatelessWidget {
       ),
       body: const Column(children: <Widget>[
         SizedBox(
-          height: 20,
+          height: 30,
         ),
         Text(
           'Services Offered',
@@ -128,7 +128,7 @@ class HomeScreen extends StatelessWidget {
         ),
         Expanded(
             child: DefaultTabController(
-                length: 4,
+                length: 2,
                 child: Column(
                   children: <Widget>[
                     TabBar(
@@ -162,8 +162,8 @@ class HomeScreen extends StatelessWidget {
                         ])),
                         Tab(
                             child: Column(children: <Widget>[
-                          Icon(Icons.library_books_outlined),
-                          Text('About')
+                          Icon(Icons.warning_sharp),
+                          Text('Faults')
                         ])),
                       ],
                     ),
@@ -194,12 +194,12 @@ class DashBoardScreen extends StatelessWidget {
   }
 }
 
-class AboutScreen extends StatelessWidget {
-  const AboutScreen({super.key});
+class FaultScreen extends StatelessWidget {
+  const FaultScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('About Screen'),
+      child: Text('Faults Screen'),
     );
   }
 }
