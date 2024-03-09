@@ -111,10 +111,17 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     TabBar(
-                      labelColor: Colors.blueGrey,
+                      labelColor: Color.fromARGB(255, 8, 173, 255),
                       unselectedLabelColor: Colors.black,
                       indicator: BoxDecoration(
-                        color: Colors.grey,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color.fromARGB(25, 193, 164, 164),
+                            blurRadius: 10,
+                            spreadRadius: 5,
+                          ),
+                        ],
+                        color: Color.fromARGB(25, 193, 164, 164),
                       ),
                       tabs: <Widget>[
                         Tab(
