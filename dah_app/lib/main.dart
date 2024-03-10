@@ -142,56 +142,44 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               mainAxisSpacing: 16,
               crossAxisSpacing: 16,
-              children: [
+              children: const [
                 // Box 1 my account
                 ServiceBox(
                   icon: Icons.account_circle,
                   title: 'Account',
-                  onTap: () {
-                    // Navigate to Account screen
-                  },
+                  route: '/account',
                 ),
 
                 // Box 2 reports
                 ServiceBox(
                   icon: Icons.car_repair,
                   title: 'Report',
-                  onTap: () {
-                    // Navigate to Services screen
-                  },
+                  route: '/reports',
                 ),
 
                 // Box 3
                 ServiceBox(
                   icon: Icons.speed,
                   title: 'Dashboard',
-                  onTap: () {
-                    // Navigate to Dashboard screen
-                  },
+                  route: '/dashboard',
                 ),
                 // Box 4
                 ServiceBox(
                   icon: Icons.warning_sharp,
                   title: 'Faults',
-                  onTap: () {
-                    // Navigate to Faults screen
-                  },
+                  route: '/faults',
                 ),
                 // Box 5 my cars
                 ServiceBox(
                   icon: Icons.directions_car,
                   title: 'My Cars',
-                  onTap: () {
-                    // Navigate to My Cars screen
-                  },
+                  route: '/my_cars',
                 ),
                 // Box 6 nearest service
                 ServiceBox(
                   icon: Icons.location_on,
                   title: 'My Location',
-                  onTap: () {
-                    // Navigate to My Location screen
-                  },
+                  route: '/my_location',
                 ),
               ],
             ),
@@ -205,19 +193,21 @@ class HomeScreen extends StatelessWidget {
 class ServiceBox extends StatelessWidget {
   final IconData icon;
   final String title;
-  final VoidCallback onTap;
+  final String route;
 
   const ServiceBox({
     super.key,
     required this.icon,
     required this.title,
-    required this.onTap,
+    required this.route,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        Navigator.pushNamed(context, route);
+      },
       child: Container(
         decoration: BoxDecoration(
           color: Colors.grey[200],
