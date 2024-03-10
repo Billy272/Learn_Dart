@@ -93,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -188,6 +188,8 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+
+  void setState(Null Function() param0) {}
 }
 
 class ServiceBox extends StatelessWidget {
@@ -196,11 +198,11 @@ class ServiceBox extends StatelessWidget {
   final String route;
 
   const ServiceBox({
-    super.key,
+    Key? key,
     required this.icon,
     required this.title,
     required this.route,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
