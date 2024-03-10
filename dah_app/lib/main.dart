@@ -86,12 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class HomeScreen extends StatelessWidget {
-  final String _name;
-  const HomeScreen({super.key, String name = 'Billy'})
-      : _name = name,
-        super();
-
-  get name => _name;
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -127,7 +122,7 @@ class HomeScreen extends StatelessWidget {
             height: 30,
           ),
           const Text(
-            'Hello $name',
+            'Hello Billy!',
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
