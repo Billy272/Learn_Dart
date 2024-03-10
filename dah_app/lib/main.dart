@@ -86,7 +86,12 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final String _name;
+  const HomeScreen({super.key, String name = 'Billy'})
+      : _name = name,
+        super();
+
+  get name => _name;
 
   @override
   Widget build(BuildContext context) {
@@ -122,7 +127,7 @@ class HomeScreen extends StatelessWidget {
             height: 30,
           ),
           const Text(
-            'Services Offered',
+            'Hello $name',
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -145,14 +150,15 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
 
-                // Box 2
+                // Box 2 reports
                 ServiceBox(
-                  icon: Icons.build_sharp,
-                  title: 'Services',
+                  icon: Icons.car_repair,
+                  title: 'Report',
                   onTap: () {
                     // Navigate to Services screen
                   },
                 ),
+
                 // Box 3
                 ServiceBox(
                   icon: Icons.speed,
