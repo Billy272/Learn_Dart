@@ -92,9 +92,14 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -189,7 +194,10 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  void setState(Null Function() param0) {}
+  @override
+  void setState(VoidCallback fn) {
+    super.setState(fn);
+  }
 }
 
 class ServiceBox extends StatelessWidget {
