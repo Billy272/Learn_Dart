@@ -87,6 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -115,62 +116,120 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const Column(children: <Widget>[
-        SizedBox(
-          height: 30,
-        ),
-        Text(
-          'Services Offered',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Colors.blue,
+      body: Column(
+        children: <Widget>[
+          const SizedBox(
+            height: 30,
           ),
+          const Text(
+            'Services Offered',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.blue,
+            ),
+          ),
+          Expanded(
+            child: GridView.count(
+              crossAxisCount: 3, // Number of columns in the grid
+              padding: const EdgeInsets.all(16),
+              mainAxisSpacing: 16,
+              crossAxisSpacing: 16,
+              children: [
+                // Box 1 my account
+                ServiceBox(
+                  icon: Icons.account_circle,
+                  title: 'Account',
+                  onTap: () {
+                    // Navigate to Account screen
+                  },
+                ),
+
+                // Box 2
+                ServiceBox(
+                  icon: Icons.build_sharp,
+                  title: 'Services',
+                  onTap: () {
+                    // Navigate to Services screen
+                  },
+                ),
+                // Box 3
+                ServiceBox(
+                  icon: Icons.speed,
+                  title: 'Dashboard',
+                  onTap: () {
+                    // Navigate to Dashboard screen
+                  },
+                ),
+                // Box 4
+                ServiceBox(
+                  icon: Icons.warning_sharp,
+                  title: 'Faults',
+                  onTap: () {
+                    // Navigate to Faults screen
+                  },
+                ),
+                // Box 5 my cars
+                ServiceBox(
+                  icon: Icons.directions_car,
+                  title: 'My Cars',
+                  onTap: () {
+                    // Navigate to My Cars screen
+                  },
+                ),
+                // Box 6 nearest service
+                ServiceBox(
+                  icon: Icons.location_on,
+                  title: 'My Location',
+                  onTap: () {
+                    // Navigate to My Location screen
+                  },
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ServiceBox extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final VoidCallback onTap;
+
+  const ServiceBox({
+    super.key,
+    required this.icon,
+    required this.title,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.grey[200],
+          borderRadius: BorderRadius.circular(10),
         ),
-        Expanded(
-            child: DefaultTabController(
-                length: 4,
-                child: Column(
-                  children: <Widget>[
-                    TabBar(
-                      labelColor: Color.fromARGB(255, 8, 173, 255),
-                      unselectedLabelColor: Colors.black,
-                      indicator: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromARGB(25, 193, 164, 164),
-                            blurRadius: 10,
-                            spreadRadius: 5,
-                          ),
-                        ],
-                        color: Color.fromARGB(25, 193, 164, 164),
-                      ),
-                      tabs: <Widget>[
-                        Tab(
-                            child: Column(children: <Widget>[
-                          Icon(Icons.home),
-                          Text('Home')
-                        ])),
-                        Tab(
-                            child: Column(children: <Widget>[
-                          Icon(Icons.build_sharp),
-                          Text('Services')
-                        ])),
-                        Tab(
-                            child: Column(children: <Widget>[
-                          Icon(Icons.speed),
-                          Text('Dashboard')
-                        ])),
-                        Tab(
-                            child: Column(children: <Widget>[
-                          Icon(Icons.warning_sharp),
-                          Text('Faults')
-                        ])),
-                      ],
-                    ),
-                  ],
-                )))
-      ]),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(icon, size: 50),
+            const SizedBox(height: 10),
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
