@@ -10,14 +10,21 @@ class Rawyalty extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Rawyalty App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: const MyHomePage(),
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Rawyalty App',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: const MyHomePage(),
+        routes: {
+          '/account': (context) => const AccountScreen(),
+          '/reports': (context) => const ReportScreen(),
+          '/dashboard': (context) => const DashBoardScreen(),
+          '/faults': (context) => const FaultScreen(),
+          '/my_cars': (context) => const MyCarScreen(),
+          '/my_location': (context) => const MyLocationScreen(),
+        });
   }
 }
 
@@ -271,6 +278,50 @@ class AccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: Text('Account Screen'),
+    );
+  }
+}
+
+class ReportScreen extends StatelessWidget {
+  const ReportScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text('Report Screen'),
+    );
+  }
+}
+
+class MyCarScreen extends StatelessWidget {
+  const MyCarScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text('My Cars Screen'),
+    );
+  }
+}
+
+class MyLocationScreen extends StatelessWidget {
+  const MyLocationScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text('My Location Screen'),
+    );
+  }
+}
+
+class Notification extends StatelessWidget {
+  const Notification({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text('Notification Screen'),
     );
   }
 }
