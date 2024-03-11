@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'services.dart';
 import 'car_data.dart';
 
 void main() {
   runApp(const Rawyalty());
+  ServicesScreen servicesScreen = ServicesScreen();
+  servicesScreen.build(context);
 }
 
 class Rawyalty extends StatelessWidget {
@@ -194,11 +197,11 @@ class ServiceBox extends StatefulWidget {
   final String title;
   final String route;
   const ServiceBox({
-    super.key,
+    Key? key,
     required this.icon,
     required this.title,
     required this.route,
-  });
+  }) : super(key: key);
 
   @override
   State<ServiceBox> createState() => _ServiceBoxState();
@@ -241,8 +244,11 @@ class _ServiceBoxState extends State<ServiceBox> {
   }
 }
 
-class ServicesScreen extends StatelessWidget {
-  const ServicesScreen({super.key});
+abstract class ServicesScreen extends StatelessWidget {
+  ServicesScreen({super.key});
+
+  final ServicesScreen servicesScreen = ServicesScreen();
+
   @override
   Widget build(BuildContext context) {
     return const Center(
