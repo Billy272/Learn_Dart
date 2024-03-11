@@ -278,16 +278,17 @@ class DashBoardScreen extends StatelessWidget {
                     alignment: Alignment.center,
                     child: SvgPicture.asset('assets/svg/speedometer_arc.svg',
                         width: 200),
-                  )
-                  RotationTransition(turns: const AlwaysStoppedAnimation(0.8),
-                  child: SvgPicture.asset(
-                    'assets/svg/speedometer_needle.svg',
-                    height: 100,
                   ),
+                  RotationTransition(
+                    turns: const AlwaysStoppedAnimation(0.8),
+                    child: SvgPicture.asset(
+                      'assets/svg/speedometer_needle.svg',
+                      height: 100,
+                    ),
                   ),
                   const Center(
                     child: Text(
-                      '120',
+                      '180',
                       style: TextStyle(
                         fontSize: 40,
                         color: Colors.white,
@@ -298,7 +299,15 @@ class DashBoardScreen extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
+          Positioned(
+            bottom: 50,
+            right: 30,
+            child: SvgPicture.asset(
+              'assets/svg/fuel_gauge.svg',
+              width: 100,
+            ),
+          ),
         ],
       ),
     );
