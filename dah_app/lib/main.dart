@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:provider/provider.dart';
 import 'car_data.dart';
 
 void main() {
@@ -23,7 +22,7 @@ class Rawyalty extends StatelessWidget {
         routes: {
           '/account': (context) => const AccountScreen(),
           '/reports': (context) => const ReportScreen(),
-          '/dashboard': (context) => const DashBoardScreen(),
+          '/dashboard': (context) => DashBoardScreen(),
           '/faults': (context) => const FaultScreen(),
           '/my_cars': (context) => const MyCarScreen(),
           '/my_location': (context) => const MyLocationScreen(),
@@ -44,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Widget> _children = [
     const HomeScreen(),
     const ServicesScreen(),
-    const DashBoardScreen(),
+    DashBoardScreen(),
     const FaultScreen(),
     const AccountScreen(),
   ];
@@ -252,19 +251,13 @@ class ServicesScreen extends StatelessWidget {
   }
 }
 
-void main() => runApp(
-      Provider<CarData>(
-        create: (_) => CarData(),
-        child: const DashBoardScreen(),
-      ),
-    );
-
 class DashBoardScreen extends StatelessWidget {
-  const DashBoardScreen({super.key});
+  DashBoardScreen({super.key});
+
+  final CarData carData = CarData();
 
   @override
   Widget build(BuildContext context) {
-    final carData = Provider.of<CarData>(context);
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: Stack(
@@ -293,7 +286,7 @@ class DashBoardScreen extends StatelessWidget {
                   Transform(
                     alignment: FractionalOffset.center,
                     transform: Matrix4.identity()
-                      ..rotateZ(carData.speed * PI / 180),
+                      ..rotateZ(carData.speed * 3.14 / 180),
                     child: SvgPicture.asset(
                         'assets/svg/speedometer_needle.svg'), // Adjust width if needed
                   ),
