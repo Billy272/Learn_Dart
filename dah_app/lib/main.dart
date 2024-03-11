@@ -283,7 +283,8 @@ class DashBoardScreen extends StatelessWidget {
                   child: SvgPicture.asset(
                     'assets/svg/speedometer_needle.svg',
                     height: 100,
-                  ),),
+                  ),
+                  ),
                   const Center(
                     child: Text(
                       '120',
