@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   runApp(const Rawyalty());
@@ -253,8 +254,28 @@ class DashBoardScreen extends StatelessWidget {
   const DashBoardScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Dashboard Screen'),
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+      body: Stack(
+        children: [
+          Image.asset('assets/images/car.jpg',
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: double.infinity),
+          //speedometer gauge
+          Center(
+            child: Container(
+              width: 250,
+              height: 250,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.white.withOpacity(0.2),
+                border: Border.all(color: Colors.white, width: 10),
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
