@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
+import 'car_data.dart';
 
 void main() {
   runApp(const Rawyalty());
@@ -250,10 +252,19 @@ class ServicesScreen extends StatelessWidget {
   }
 }
 
+void main() => runApp(
+      Provider<CarData>(
+        create: (_) => CarData(),
+        child: const DashBoardScreen(),
+      ),
+    );
+
 class DashBoardScreen extends StatelessWidget {
   const DashBoardScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
+    final carData = Provider.of<CarData>(context);
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: Stack(
@@ -262,7 +273,7 @@ class DashBoardScreen extends StatelessWidget {
               fit: BoxFit.cover,
               width: double.infinity,
               height: double.infinity),
-          //speedometer gauge
+          // Speedometer gauge
           Center(
             child: Container(
               width: 250,
@@ -279,23 +290,23 @@ class DashBoardScreen extends StatelessWidget {
                     child: SvgPicture.asset('assets/svg/speedometer_arc.svg',
                         width: 200),
                   ),
-                  RotationTransition(
-                    turns: const AlwaysStoppedAnimation(0.8),
+                  Transform(
+                    alignment: FractionalOffset.center,
+                    transform: Matrix4.identity()
+                      ..rotateZ(carData.speed * PI / 180),
                     child: SvgPicture.asset(
-                      'assets/svg/speedometer_needle.svg',
-                      height: 100,
-                    ),
+                        'assets/svg/speedometer_needle.svg'), // Adjust width if needed
                   ),
                   const Center(
                     child: Text(
-                      '180',
+                      '180', // Replace with actual speed value (for reference)
                       style: TextStyle(
                         fontSize: 40,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
