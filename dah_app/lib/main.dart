@@ -258,7 +258,7 @@ class DashBoardScreen extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       body: Stack(
         children: [
-          Image.asset('assets/images/car.jpg',
+          Image.asset('assets/car.jpg',
               fit: BoxFit.cover,
               width: double.infinity,
               height: double.infinity),
@@ -271,6 +271,15 @@ class DashBoardScreen extends StatelessWidget {
                 shape: BoxShape.circle,
                 color: Colors.white.withOpacity(0.2),
                 border: Border.all(color: Colors.white, width: 10),
+              ),
+              child: Stack(
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    child: SvgPicture.asset('assets/svg/speedometer_arc.svg',
+                        width: 200),
+                  )
+                ],
               ),
             ),
           )
