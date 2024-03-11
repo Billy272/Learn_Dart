@@ -143,44 +143,36 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Expanded(
             child: GridView.count(
-              crossAxisCount: 3, // Number of columns in the grid
-              padding: const EdgeInsets.all(16),
-              mainAxisSpacing: 16,
-              crossAxisSpacing: 16,
+              crossAxisCount: 3,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+              padding: const EdgeInsets.all(10),
               children: const [
-                // Box 1 my account
                 ServiceBox(
                   icon: Icons.account_circle,
                   title: 'Account',
                   route: '/account',
                 ),
-
-                // Box 2 reports
                 ServiceBox(
                   icon: Icons.car_repair,
                   title: 'Report',
                   route: '/reports',
                 ),
-
-                // Box 3
                 ServiceBox(
                   icon: Icons.speed,
                   title: 'Dashboard',
                   route: '/dashboard',
                 ),
-                // Box 4
                 ServiceBox(
                   icon: Icons.warning_sharp,
                   title: 'Faults',
                   route: '/faults',
                 ),
-                // Box 5 my cars
                 ServiceBox(
                   icon: Icons.directions_car,
                   title: 'My Cars',
                   route: '/my_cars',
                 ),
-                // Box 6 nearest service
                 ServiceBox(
                   icon: Icons.location_on,
                   title: 'My Location',
@@ -193,18 +185,12 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-
-  @override
-  void setState(VoidCallback fn) {
-    super.setState(fn);
-  }
 }
 
-class ServiceBox extends StatelessWidget {
+class ServiceBox extends StatefulWidget {
   final IconData icon;
   final String title;
   final String route;
-
   const ServiceBox({
     Key? key,
     required this.icon,
@@ -213,26 +199,37 @@ class ServiceBox extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<ServiceBox> createState() => _ServiceBoxState();
+}
+
+class _ServiceBoxState extends State<ServiceBox> {
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, route);
+        Navigator.pushNamed(context, widget.route);
       },
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.grey[200],
+          color: const Color.fromARGB(255, 13, 13, 13),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, size: 50),
-            const SizedBox(height: 10),
+          children: <Widget>[
+            Icon(
+              widget.icon,
+              color: Colors.white,
+              size: 50,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
             Text(
-              title,
+              widget.title,
               style: const TextStyle(
+                color: Colors.white,
                 fontSize: 18,
-                fontWeight: FontWeight.bold,
               ),
             ),
           ],
