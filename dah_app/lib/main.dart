@@ -279,6 +279,21 @@ class DashBoardScreen extends StatelessWidget {
                     child: SvgPicture.asset('assets/svg/speedometer_arc.svg',
                         width: 200),
                   )
+                  RotationTransition(turns: const AlwaysStoppedAnimation(0.8),
+                  child: SvgPicture.asset(
+                    'assets/svg/speedometer_needle.svg',
+                    height: 100,
+                  ),),
+                  const Center(
+                    child: Text(
+                      '120',
+                      style: TextStyle(
+                        fontSize: 40,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
