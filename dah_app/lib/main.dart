@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'car_data.dart';
 
-void main() async {
+void main() {
   runApp(const Rawyalty());
 }
 
