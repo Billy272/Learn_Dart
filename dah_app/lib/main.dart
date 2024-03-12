@@ -506,8 +506,27 @@ class Notification extends StatelessWidget {
           fontSize: 20,
         ),
       ),
-      body: const Center(
-        child: Text('Notification Screen'),
+      body: ListView.builder(
+        itemCount: notifications.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text(notifications[index]['title']!),
+            subtitle: Column(
+              children: [
+                Text(notifications[index]['message']!),
+                const SizedBox(height: 10),
+                Text(
+                  'Time: ${notifications[index]['time']}',
+                  style:
+                      const TextStyle(color: Color.fromARGB(255, 7, 232, 176)),
+                ),
+              ],
+            ),
+            onTap: () {
+              print('Notification tapped: ${notifications[index]['title']}');
+            },
+          );
+        },
       ),
     );
   }
