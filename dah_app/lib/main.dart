@@ -489,8 +489,26 @@ class Notification extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Notification Screen'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Notification'),
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+        toolbarHeight: 80,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(20),
+          ),
+        ),
+        titleTextStyle: const TextStyle(
+          fontWeight: FontWeight.bold,
+          fontStyle: FontStyle.italic,
+          fontSize: 20,
+        ),
+      ),
+      body: const Center(
+        child: Text('Notification Screen'),
+      ),
     );
   }
 }
