@@ -1,16 +1,8 @@
-# dah_app
+# Rawyalty App
 
-A new Flutter project.
+This project deals with building an app based on flutter. 
 
-## Getting Started
+## About it
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+It entails an app that gains info from a system. This is enabled by use of Arduino board and OBD II. The data from this equipments is made
+to the cloud hence the use of Firebase to retrieve the data. The realtime data is then shared to the app.
