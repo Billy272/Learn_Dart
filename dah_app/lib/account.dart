@@ -1,20 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-class AccountScreen extends StatelessWidget {
-  final String userName;
-  final String email;
-  final String phoneNumber;
-  final String address;
-  final String profileImage;
+class AccountScreen extends StatefulWidget {
+  const AccountScreen({Key? key}) : super(key: key);
 
-  const AccountScreen({
-    super.key,
-    required this.userName,
-    required this.email,
-    required this.phoneNumber,
-    required this.address,
-    required this.profileImage,
-  });
+  @override
+  State<AccountScreen> createState() => _AccountScreenState();
+}
+
+class _AccountScreenState extends State<AccountScreen> {
+  late User? _user;
+  late String _userName;
+  late String _email;
+  late String _phoneNumber;
+  late String _address;
+  late String _profileImage;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchUserData();
+  }
+
+  Future<void> _fetchUserData() async {
+    _user = FirebaseAuth.instance.currentUser;
+    if (_user != null) {
+      final userData = await FirebaseFirestore.instance
+          .collection('users')
+          .doc(_user!.uid)
+          .get();
+      setState(() {
+        _userName = userData['name'];
+        _email = userData['email'];
+        _phoneNumber = userData['phone'];
+        _address = userData['address'];
+        _profileImage = userData['profileImage'];
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,11 +53,11 @@ class AccountScreen extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 40,
-              backgroundImage: NetworkImage(profileImage),
+              backgroundImage: NetworkImage(widget.profileImage),
             ),
             const SizedBox(height: 20),
             Text(
-              'Name: $userName',
+              'Name: ${widget.userName}',
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -41,7 +65,7 @@ class AccountScreen extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Text(
-              'Email: $email',
+              'Email: ${widget.email}',
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -49,7 +73,7 @@ class AccountScreen extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Text(
-              'Phone: $phoneNumber',
+              'Phone: ${widget.phoneNumber}',
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -57,7 +81,7 @@ class AccountScreen extends StatelessWidget {
             ),
             const SizedBox(height: 10),
             Text(
-              'Address: $address',
+              'Address: ${widget.address}',
               style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
