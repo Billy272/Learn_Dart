@@ -204,6 +204,20 @@ class ServiceBox extends StatefulWidget {
   State<ServiceBox> createState() => _ServiceBoxState();
 }
 
+class ScrollDown extends StatefulWidget {
+  const ScrollDown({super.key});
+
+  @override
+  State<ScrollDown> createState() => _ScrollDownState();
+}
+
+class _ScrollDownState extends State<ScrollDown> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
+
 class ServicesScreen extends StatelessWidget {
   const ServicesScreen({super.key});
   @override
@@ -404,8 +418,35 @@ class FaultScreen extends StatelessWidget {
   const FaultScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Faults Screen'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Faults'),
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+        toolbarHeight: 80,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(20),
+          ),
+        ),
+        titleTextStyle: const TextStyle(
+          fontWeight: FontWeight.bold,
+          fontStyle: FontStyle.italic,
+          fontSize: 20,
+        ),
+        actions: [
+          IconButton(
+            color: Colors.white,
+            icon: const Icon(Icons.notifications),
+            onPressed: () {
+              //do something
+            },
+          ),
+        ],
+      ),
+      body: const Center(
+        child: Text('Faults Screen'),
+      ),
     );
   }
 }
