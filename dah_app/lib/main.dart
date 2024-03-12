@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
-import 'dashboard.dart';
-import 'services.dart';
-
 import 'package:flutter_svg/flutter_svg.dart';
 import 'car_data.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
   runApp(const Rawyalty());
 }
 
@@ -324,20 +319,19 @@ class _ServiceBoxState extends State<ServiceBox> {
 }
 
 class AccountScreen extends StatefulWidget {
-  final String userName;
-  final String email;
-  final String phoneNumber;
-  final String address;
-  final String profileImage;
+  // final String userName;
+  // final String email;
+  // final String phoneNumber;
+  // final String address;
+  // final String profileImage;
 
-  const AccountScreen({
-    super.key,
-    required this.userName,
-    required this.email,
-    required this.phoneNumber,
-    required this.address,
-    required this.profileImage,
-  });
+  const AccountScreen({super.key
+      // required this.userName,
+      // required this.email,
+      // required this.phoneNumber,
+      // required this.address,
+      // required this.profileImage,
+      });
 
   @override
   State<AccountScreen> createState() => _AccountScreenState();
@@ -355,38 +349,39 @@ class _AccountScreenState extends State<AccountScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CircleAvatar(
+            const CircleAvatar(
               radius: 40,
-              backgroundImage: NetworkImage(widget.profileImage),
+              backgroundImage: NetworkImage(
+                  'https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png'),
             ),
             const SizedBox(height: 20),
-            Text(
-              'Name: ${widget.userName}',
-              style: const TextStyle(
+            const Text(
+              'Name: ',
+              style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(height: 10),
-            Text(
-              'Email: ${widget.email}',
-              style: const TextStyle(
+            const Text(
+              'Email: ',
+              style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(height: 10),
-            Text(
-              'Phone: ${widget.phoneNumber}',
-              style: const TextStyle(
+            const Text(
+              'Phone: ',
+              style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(height: 10),
-            Text(
-              'Address: ${widget.address}',
-              style: const TextStyle(
+            const Text(
+              'Address: ',
+              style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
