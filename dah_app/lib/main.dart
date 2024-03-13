@@ -107,14 +107,15 @@ class HomeScreen extends StatelessWidget {
             fontWeight: FontWeight.bold,
             fontStyle: FontStyle.italic,
             fontSize: 25,
+            color: Colors.blue,
           ),
         ),
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 3, 11, 54),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         toolbarHeight: 100,
         actions: <Widget>[
           IconButton(
-            color: Colors.white,
+            color: Colors.blue,
             icon: const Icon(Icons.notifications),
             onPressed: () {
               // Handle notification button press
