@@ -94,91 +94,100 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Rawyalty'),
-        centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 13, 13, 13),
-        toolbarHeight: 100,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(20),
+        title: const Text(
+          'Rawyalty',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            fontSize: 25,
           ),
         ),
-        titleTextStyle: const TextStyle(
-          fontWeight: FontWeight.bold,
-          fontStyle: FontStyle.italic,
-          fontSize: 25,
-        ),
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 3, 11, 54),
+        toolbarHeight: 100,
         actions: <Widget>[
           IconButton(
             color: Colors.white,
             icon: const Icon(Icons.notifications),
             onPressed: () {
-              //do something
+              // Handle notification button press
             },
           ),
         ],
       ),
-      body: Column(
+      body: Stack(
         children: <Widget>[
-          const SizedBox(
-            height: 30,
-          ),
-          const Text(
-            'Hello Billy!',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.blue,
+          Positioned.fill(
+            child: Image.asset(
+              'assets/connected.jpeg',
+              fit: BoxFit.cover,
             ),
           ),
-          Expanded(
-            child: GridView.count(
-              crossAxisCount: 3,
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 10,
-              padding: const EdgeInsets.all(10),
-              children: const [
-                ServiceBox(
-                  icon: Icons.account_circle,
-                  title: 'Account',
-                  route: '/account',
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.black.withOpacity(0.5),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                const SizedBox(height: kToolbarHeight), // Padding for app bar
+                const Text(
+                  'Hello Billy!',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
-                ServiceBox(
-                  icon: Icons.car_repair,
-                  title: 'Report',
-                  route: '/reports',
-                ),
-                ServiceBox(
-                  icon: Icons.speed,
-                  title: 'Dashboard',
-                  route: '/dashboard',
-                ),
-                ServiceBox(
-                  icon: Icons.warning_sharp,
-                  title: 'Faults',
-                  route: '/faults',
-                ),
-                ServiceBox(
-                  icon: Icons.directions_car,
-                  title: 'My Cars',
-                  route: '/my_cars',
-                ),
-                ServiceBox(
-                  icon: Icons.location_on,
-                  title: 'My Location',
-                  route: '/my_location',
+                const SizedBox(height: 20),
+                Expanded(
+                  child: GridView.count(
+                    crossAxisCount: 3,
+                    mainAxisSpacing: 20,
+                    crossAxisSpacing: 20,
+                    children: const [
+                      ServiceBox(
+                        icon: Icons.account_circle,
+                        title: 'Account',
+                        route: '/account',
+                      ),
+                      ServiceBox(
+                        icon: Icons.car_repair,
+                        title: 'Report',
+                        route: '/reports',
+                      ),
+                      ServiceBox(
+                        icon: Icons.speed,
+                        title: 'Dashboard',
+                        route: '/dashboard',
+                      ),
+                      ServiceBox(
+                        icon: Icons.warning_sharp,
+                        title: 'Faults',
+                        route: '/faults',
+                      ),
+                      ServiceBox(
+                        icon: Icons.directions_car,
+                        title: 'My Cars',
+                        route: '/my_cars',
+                      ),
+                      ServiceBox(
+                        icon: Icons.location_on,
+                        title: 'My Location',
+                        route: '/my_location',
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -189,10 +198,11 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-class ServiceBox extends StatefulWidget {
+class ServiceBox extends StatelessWidget {
   final IconData icon;
   final String title;
   final String route;
+
   const ServiceBox({
     super.key,
     required this.icon,
@@ -201,7 +211,39 @@ class ServiceBox extends StatefulWidget {
   });
 
   @override
-  State<ServiceBox> createState() => _ServiceBoxState();
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        // Navigate to the specified route
+        Navigator.pushNamed(context, route);
+      },
+      child: Card(
+        elevation: 4,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(
+              icon,
+              size: 40,
+              color: Colors.blue,
+            ),
+            const SizedBox(height: 10),
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 class ScrollDown extends StatefulWidget {
@@ -290,43 +332,6 @@ class DashBoardScreen extends StatelessWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class _ServiceBoxState extends State<ServiceBox> {
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.pushNamed(context, widget.route);
-      },
-      child: Container(
-        decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 13, 13, 13),
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Icon(
-              widget.icon,
-              color: Colors.white,
-              size: 50,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Text(
-              widget.title,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }
