@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'car_data.dart';
+import 'notifications.dart';
 
 void main() {
   runApp(const Rawyalty());
@@ -491,7 +492,25 @@ class MyLocationScreen extends StatelessWidget {
 }
 
 class Notification extends StatelessWidget {
-  const Notification({super.key});
+  Notification({super.key});
+
+  final List<Map<String, String>> notifications = [
+    {
+      'title': 'Service Reminder',
+      'message': 'Your car is due for service',
+      'time': '10:00 AM',
+    },
+    {
+      'title': 'Speed Alert',
+      'message': 'You have exceeded the speed limit',
+      'time': '11:00 AM',
+    },
+    {
+      'title': 'Fuel Alert',
+      'message': 'Fuel level is low',
+      'time': '12:00 PM',
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
