@@ -340,84 +340,125 @@ class DashBoardScreen extends StatelessWidget {
 }
 
 class AccountScreen extends StatefulWidget {
-  // final String userName;
-  // final String email;
-  // final String phoneNumber;
-  // final String address;
-  // final String profileImage;
-
-  const AccountScreen({super.key
-      // required this.userName,
-      // required this.email,
-      // required this.phoneNumber,
-      // required this.address,
-      // required this.profileImage,
-      });
+  const AccountScreen({super.key});
 
   @override
   State<AccountScreen> createState() => _AccountScreenState();
 }
 
 class _AccountScreenState extends State<AccountScreen> {
+  String _username = 'Billy';
+  String _password = '12345678';
+  String _email = 'example@gmail.com';
+  String _phone = '1234567890';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Account'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(18),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const CircleAvatar(
-              radius: 40,
-              backgroundImage: NetworkImage(
-                  'https://www.pngitem.com/pimgs/m/146-1468479_my-profile-icon-blank-profile-picture-circle-hd.png'),
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              'Name: ',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 10),
-            const Text(
-              'Email: ',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 10),
-            const Text(
-              'Phone: ',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 10),
-            const Text(
-              'Address: ',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                //sign out
-              },
-              child: const Text('Sign Out'),
-            ),
-          ],
+        appBar: AppBar(
+          title: const Text('Account'),
+          centerTitle: true,
         ),
-      ),
-    );
+        body: Padding(
+            padding: const EdgeInsets.all(20),
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              const SizedBox(height: 20),
+              const CircleAvatar(
+                radius: 60,
+                backgroundImage: AssetImage('asset/future_city.jpg'),
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                'Username: ',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              TextFormField(
+                initialValue: _username,
+                decoration: const InputDecoration(
+                    hintText: 'Enter your username',
+                    border: OutlineInputBorder()),
+                onChanged: (value) {
+                  setState(() {
+                    _username = value;
+                  });
+                },
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                'Password: ',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              TextFormField(
+                initialValue: _password,
+                decoration: const InputDecoration(
+                  hintText: 'Enter password',
+                  border: OutlineInputBorder(),
+                ),
+                obscureText: true,
+                onChanged: (value) {
+                  setState(() {
+                    _password = value;
+                  });
+                },
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                'Email: ',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              TextFormField(
+                initialValue: _email,
+                decoration: const InputDecoration(
+                  hintText: 'Enter your email',
+                  border: OutlineInputBorder(),
+                ),
+                onChanged: (value) {
+                  setState(() {
+                    _email = value;
+                  });
+                },
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                'Phone: ',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              TextFormField(
+                initialValue: _phone,
+                decoration: const InputDecoration(
+                  hintText: 'Enter your phone number',
+                  border: OutlineInputBorder(),
+                ),
+                onChanged: (value) {
+                  setState(() {
+                    _phone = value;
+                  });
+                },
+              ),
+              const SizedBox(height: 20),
+              ElevatedButton(
+                onPressed: () {
+                  print('Username: $_username');
+                  print('Password: $_password');
+                  print('Email: $_email');
+                  print('Phone: $_phone');
+                },
+                child: const Text('Save'),
+              )
+            ])));
   }
 }
 
