@@ -611,8 +611,32 @@ class ReportScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Report Screen'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Report'),
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+        toolbarHeight: 80,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(20),
+          ),
+        ),
+        titleTextStyle: const TextStyle(
+          fontWeight: FontWeight.bold,
+          fontStyle: FontStyle.italic,
+          fontSize: 20,
+        ),
+        actions: [
+          IconButton(
+            color: Colors.white,
+            icon: const Icon(Icons.notifications),
+            onPressed: () {
+              //do something
+            },
+          ),
+        ],
+      ),
     );
   }
 }
@@ -622,8 +646,44 @@ class MyCarScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('My Cars Screen'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('My Cars'),
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+        toolbarHeight: 80,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(20),
+          ),
+        ),
+        titleTextStyle: const TextStyle(
+          fontWeight: FontWeight.bold,
+          fontStyle: FontStyle.italic,
+          fontSize: 20,
+        ),
+        actions: [
+          IconButton(
+            color: Colors.white,
+            icon: const Icon(Icons.notifications),
+            onPressed: () {
+              //do something
+            },
+          ),
+        ],
+      ),
+      body: ListView.builder(
+        itemCount: 3,
+        itemBuilder: (context, index) {
+          return const ListTile(
+              // title: const Text('Car ${index + 1}'),
+              // subtitle: const Text('Model: Model ${index + 1}'),
+              // onTap: () {
+              //   print('Car ${index + 1} tapped');
+              // },
+              );
+        },
+      ),
     );
   }
 }
@@ -633,8 +693,32 @@ class MyLocationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('My Location Screen'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('My Location'),
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+        toolbarHeight: 80,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(20),
+          ),
+        ),
+        titleTextStyle: const TextStyle(
+          fontWeight: FontWeight.bold,
+          fontStyle: FontStyle.italic,
+          fontSize: 20,
+        ),
+        actions: [
+          IconButton(
+            color: Colors.white,
+            icon: const Icon(Icons.notifications),
+            onPressed: () {
+              //do something
+            },
+          ),
+        ],
+      ),
     );
   }
 }
