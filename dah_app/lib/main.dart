@@ -366,7 +366,7 @@ class _AccountScreenState extends State<AccountScreen> {
               const SizedBox(height: 20),
               const CircleAvatar(
                 radius: 60,
-                backgroundImage: AssetImage('asset/future_city.jpg'),
+                backgroundImage: AssetImage('assets/future_city.jpg'),
               ),
               const SizedBox(height: 20),
               const Text(
