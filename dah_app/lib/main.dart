@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'car_data.dart';
-import 'notifications.dart';
+import 'package:logger/logger.dart';
 
 void main() {
   runApp(const Rawyalty());
@@ -451,10 +451,12 @@ class _AccountScreenState extends State<AccountScreen> {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  print('Username: $_username');
-                  print('Password: $_password');
-                  print('Email: $_email');
-                  print('Phone: $_phone');
+                  final logger = Logger();
+
+                  logger.d('Username: $_username');
+                  logger.d('Password: $_password');
+                  logger.d('Email: $_email');
+                  logger.d('Phone: $_phone');
                 },
                 child: const Text('Save'),
               )
