@@ -266,8 +266,30 @@ class ServicesScreen extends StatelessWidget {
   const ServicesScreen({super.key});
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Services Screen'),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Services'),
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+        toolbarHeight: 80,
+        titleTextStyle: const TextStyle(
+          fontWeight: FontWeight.bold,
+          fontStyle: FontStyle.italic,
+          fontSize: 20,
+        ),
+        actions: [
+          IconButton(
+            color: Colors.white,
+            icon: const Icon(Icons.notifications),
+            onPressed: () {
+              //do something
+            },
+          ),
+        ],
+      ),
+      body: const Center(
+        child: Text('Services Screen'),
+      ),
     );
   }
 }
@@ -280,7 +302,26 @@ class DashBoardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+      appBar: AppBar(
+        title: const Text('Dashboard'),
+        centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+        toolbarHeight: 80,
+        titleTextStyle: const TextStyle(
+          fontWeight: FontWeight.bold,
+          fontStyle: FontStyle.italic,
+          fontSize: 20,
+        ),
+        actions: [
+          IconButton(
+            color: Colors.white,
+            icon: const Icon(Icons.notifications),
+            onPressed: () {
+              //do something
+            },
+          ),
+        ],
+      ),
       body: Stack(
         children: [
           Image.asset('assets/car.jpg',
@@ -494,10 +535,74 @@ class FaultScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const Center(
-        child: Text('Faults Screen'),
+      body: ListView(
+        children: [
+          _buildSection(
+            title: 'Low Danger',
+            color: Colors.green,
+            faults: [
+              'Low Fuel',
+              'Low Tire Pressure',
+              'Low Battery',
+            ],
+          ),
+          _buildSection(
+            title: 'Medium Danger',
+            color: Colors.orange,
+            faults: [
+              'Engine Oil Low',
+              'Brake Fluid Low',
+              'Coolant Low',
+            ],
+          ),
+          _buildSection(
+            title: 'High Danger',
+            color: Colors.red,
+            faults: [
+              'Engine Overheating',
+              'Low Brake Pads',
+              'Low Brake Fluid',
+            ],
+          ),
+        ],
       ),
     );
+  }
+
+  Widget _buildSection(
+      {required String title,
+      required Color color,
+      required List<String> faults}) {
+    return Container(
+        margin: const EdgeInsets.symmetric(vertical: 10),
+        decoration: BoxDecoration(
+          color: color.withOpacity(0.2),
+          borderRadius: BorderRadius.circular(20),
+        ),
+        padding: const EdgeInsets.all(18),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: color,
+              ),
+            ),
+            const SizedBox(height: 10),
+            Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: faults.map((fault) {
+                  return Text('- $fault',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: color,
+                      ));
+                }).toList()),
+          ],
+        ));
   }
 }
 
