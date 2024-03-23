@@ -118,9 +118,7 @@ class HomeScreen extends StatelessWidget {
           IconButton(
             color: Colors.blue,
             icon: const Icon(Icons.notifications),
-            onPressed: () {
-              // Handle notification button press
-            },
+            onPressed: () {},
           ),
         ],
       ),
