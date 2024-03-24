@@ -27,6 +27,7 @@ class Rawyalty extends StatelessWidget {
           '/faults': (context) => const FaultScreen(),
           '/my_cars': (context) => const MyCarScreen(),
           '/my_location': (context) => const MyLocationScreen(),
+          '/notifications': (context) => const Notification(),
         });
   }
 }
@@ -118,7 +119,12 @@ class HomeScreen extends StatelessWidget {
           IconButton(
             color: Colors.blue,
             icon: const Icon(Icons.notifications),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Notification()),
+              );
+            },
           ),
         ],
       ),
@@ -142,7 +148,7 @@ class HomeScreen extends StatelessWidget {
               children: <Widget>[
                 const SizedBox(height: kToolbarHeight), // Padding for app bar
                 const Text(
-                  'Hello Billy!',
+                  'Hello !!',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -751,7 +757,7 @@ class _NotificationState extends State<Notification> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Notification'),
+        title: const Text('Notifications'),
         centerTitle: true,
         backgroundColor: const Color.fromARGB(255, 0, 0, 0),
         toolbarHeight: 80,
