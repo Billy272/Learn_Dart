@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'car_data.dart';
 import 'package:logger/logger.dart';
+import 'intro_sc.dart';
 
 void main() {
   runApp(const Rawyalty());
@@ -19,8 +20,9 @@ class Rawyalty extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: const MyHomePage(),
+        home: IntroductionScreen(),
         routes: {
+          '/home': (context) => const MyHomePage(),
           '/account': (context) => const AccountScreen(),
           '/reports': (context) => const ReportScreen(),
           '/dashboard': (context) => DashBoardScreen(),
