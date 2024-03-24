@@ -4,9 +4,10 @@ import 'user_details.dart';
 class IntroductionScreen extends StatelessWidget {
   final PageController _pageController = PageController();
   final List<String> _introPages = [
-    'Welcome to the Auto-Motive App',
-    'This app is designed to help you keep track of your vehicle\'s maintenance schedule',
-    'Page 3',
+    'RAWYALTY',
+    'Welcome to the best Auto-Motive App',
+    'This app is designed to help you keep track of your vehicle\'s maintenance schedule and real-time problems.',
+    'Let\'s get started by entering your details.',
   ];
 
   IntroductionScreen({super.key});
