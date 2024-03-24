@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
+import 'package:dah_app/main.dart';
 
 class UserDetailsScreen extends StatefulWidget {
   const UserDetailsScreen({super.key});
@@ -112,14 +113,19 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  final logger = Logger();
+                  Logger().i('Username: $_username');
+                  Logger().i('Password: $_password');
+                  Logger().i('Email: $_email');
+                  Logger().i('Phone: $_phone');
 
-                  logger.d('Username: $_username');
-                  logger.d('Password: $_password');
-                  logger.d('Email: $_email');
-                  logger.d('Phone: $_phone');
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MyHomePage(),
+                    ),
+                  );
                 },
-                child: const Text('Save'),
+                child: const Text('Log In'),
               )
             ])));
   }
