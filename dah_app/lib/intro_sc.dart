@@ -29,6 +29,24 @@ class IntroductionScreen extends StatelessWidget {
           );
         },
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          if (_pageController.page == _introPages.length - 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const UserDetailsScreen(),
+              ),
+            );
+          } else {
+            _pageController.nextPage(
+              duration: const Duration(milliseconds: 500),
+              curve: Curves.easeInOut,
+            );
+          }
+        },
+        child: const Icon(Icons.arrow_forward),
+      ),
     );
   }
 }
