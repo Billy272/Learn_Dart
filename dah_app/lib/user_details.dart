@@ -10,10 +10,10 @@ class UserDetailsScreen extends StatefulWidget {
 }
 
 class _UserDetailsScreenState extends State<UserDetailsScreen> {
-  String _username = 'Billy';
-  String _password = '6565';
-  String _email = 'example@example.com';
-  String _phone = '0123456789';
+  final String _username = 'Billy';
+  final String _password = '6565';
+  final String _email = 'example@example.com';
+  final String _phone = '0123456789';
 
   @override
   Widget build(BuildContext context) {

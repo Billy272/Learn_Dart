@@ -5,14 +5,14 @@ class AccountScreen extends StatelessWidget {
   final Map<String, String> userDetails;
 
   // Constructor to initialize user details
-  const AccountScreen({Key? key, required this.userDetails}) : super(key: key);
+  const AccountScreen({super.key, required this.userDetails});
 
   @override
   Widget build(BuildContext context) {
     // Extract user details from the provided map
-    String _username = userDetails['username'] ?? '';
-    String _email = userDetails['email'] ?? '';
-    String _phone = userDetails['phone'] ?? '';
+    String username = userDetails['username'] ?? '';
+    String email = userDetails['email'] ?? '';
+    String phone = userDetails['phone'] ?? '';
 
     return Scaffold(
       appBar: AppBar(
@@ -26,17 +26,17 @@ class AccountScreen extends StatelessWidget {
           children: [
             const SizedBox(height: 20),
             Text(
-              'Username: $_username',
+              'Username: $username',
               style: const TextStyle(fontSize: 20),
             ),
             const SizedBox(height: 20),
             Text(
-              'Email: $_email',
+              'Email: $email',
               style: const TextStyle(fontSize: 20),
             ),
             const SizedBox(height: 20),
             Text(
-              'Phone: $_phone',
+              'Phone: $phone',
               style: const TextStyle(fontSize: 20),
             ),
           ],
