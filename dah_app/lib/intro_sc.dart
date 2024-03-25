@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'user_details.dart';
-import 'signIn.dart';
+import 'sign_in.dart';
 
 class IntroductionScreen extends StatelessWidget {
   final PageController _pageController = PageController();
@@ -59,7 +59,7 @@ class IntroductionScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SignIn()),
+                  MaterialPageRoute(builder: (context) => const SignInScreen()),
                 );
               },
               child: const Text('Sign In'),
