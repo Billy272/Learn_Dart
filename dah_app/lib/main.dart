@@ -24,7 +24,9 @@ class Rawyalty extends StatelessWidget {
         home: IntroductionScreen(),
         routes: {
           '/home': (context) => const MyHomePage(),
-          '/account': (context) => const AccountScreen(),
+          '/account': (context) => const AccountScreen(
+                userDetails: {},
+              ),
           '/reports': (context) => const ReportScreen(),
           '/dashboard': (context) => DashBoardScreen(),
           '/faults': (context) => const FaultScreen(),
@@ -51,7 +53,9 @@ class _MyHomePageState extends State<MyHomePage> {
     const ServicesScreen(),
     DashBoardScreen(),
     const FaultScreen(),
-    const AccountScreen(),
+    const AccountScreen(
+      userDetails: {},
+    ),
   ];
 
   void onTabTapped(int index) {
