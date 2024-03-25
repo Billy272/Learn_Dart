@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'user_details.dart';
+import 'signIn.dart';
 
 class IntroductionScreen extends StatelessWidget {
   final PageController _pageController = PageController();
@@ -47,6 +48,36 @@ class IntroductionScreen extends StatelessWidget {
           }
         },
         child: const Icon(Icons.arrow_forward),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SignIn()),
+                );
+              },
+              child: const Text('Sign In'),
+            ),
+            const SizedBox(height: 20),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const UserDetailsScreen(),
+                  ),
+                );
+              },
+              child: const Text('Get Started'),
+            )
+          ],
+        ),
       ),
     );
   }
