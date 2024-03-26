@@ -10,8 +10,9 @@ class MyLocationScreen extends StatefulWidget {
 }
 
 class _MyLocationScreenState extends State<MyLocationScreen> {
-  GoogleMapController _controller;
-  LatLng _currentPosition;
+  // ignore: unused_field
+  late GoogleMapController _controller;
+  late LatLng _currentPosition;
 
   @override
   void initState() {
@@ -39,7 +40,8 @@ class _MyLocationScreenState extends State<MyLocationScreen> {
         title: const Text('My Location'),
         centerTitle: true,
       ),
-      body: _currentPosition != null
+      // ignore: unrelated_type_equality_checks
+      body: _currentPosition == true
           ? GoogleMap(
               onMapCreated: _onMapCreated,
               initialCameraPosition:

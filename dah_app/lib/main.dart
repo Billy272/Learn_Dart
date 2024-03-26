@@ -4,6 +4,7 @@ import 'car_data.dart';
 import 'intro_sc.dart';
 import 'notifications.dart';
 import 'accounts.dart';
+import 'mylocation.dart';
 
 void main() {
   runApp(const Rawyalty());
@@ -585,44 +586,6 @@ class MyCarScreen extends StatelessWidget {
               // },
               );
         },
-      ),
-    );
-  }
-}
-
-class MyLocationScreen extends StatelessWidget {
-  const MyLocationScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('My Location'),
-        centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-        toolbarHeight: 80,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(
-            bottom: Radius.circular(20),
-          ),
-        ),
-        titleTextStyle: const TextStyle(
-          fontWeight: FontWeight.bold,
-          fontStyle: FontStyle.italic,
-          fontSize: 20,
-        ),
-        actions: [
-          IconButton(
-            color: Colors.white,
-            icon: const Icon(Icons.notifications),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => NotificationScreen()),
-              );
-            },
-          ),
-        ],
       ),
     );
   }
