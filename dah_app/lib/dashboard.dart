@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'notifications.dart';
+import 'package:provider/provider.dart';
+import 'package:dah_app/notifications.dart';
+import 'car_data.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final car_data = Provider.of<CarData>(context);
+
     return Scaffold(
         appBar: AppBar(
           title: const Text('Dashboard'),
@@ -43,6 +47,12 @@ class DashboardScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    'Speed: ${car_data.speed} km/h',
+                    style: TextStyle(
+                      fontSize: 20,
                     ),
                   ),
                 ),
