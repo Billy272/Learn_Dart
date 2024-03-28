@@ -26,6 +26,7 @@ class IntroductionScreen extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
               ),
             ),
           );
@@ -52,8 +53,8 @@ class IntroductionScreen extends StatelessWidget {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(16),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ElevatedButton(
               onPressed: () {
@@ -65,7 +66,7 @@ class IntroductionScreen extends StatelessWidget {
               child: const Text('Sign In'),
             ),
             const SizedBox(height: 20),
-            TextButton(
+            ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
@@ -74,7 +75,7 @@ class IntroductionScreen extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text('Get Started'),
+              child: const Text('Sign Up'),
             )
           ],
         ),
