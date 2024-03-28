@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'car_data.dart';
 import 'intro_sc.dart';
 import 'notifications.dart';
 import 'accounts.dart';
 import 'mylocation.dart';
+import 'dashboard.dart';
 
 void main() {
   runApp(const Rawyalty());
@@ -29,7 +28,7 @@ class Rawyalty extends StatelessWidget {
                 userDetails: {},
               ),
           '/reports': (context) => const ReportScreen(),
-          '/dashboard': (context) => DashBoardScreen(),
+          '/dashboard': (context) => const DashboardScreen(),
           '/faults': (context) => const FaultScreen(),
           '/my_cars': (context) => const MyCarScreen(),
           '/my_location': (context) => const MyLocationScreen(),
@@ -52,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Widget> _children = [
     const HomeScreen(),
     const ServicesScreen(),
-    DashBoardScreen(),
+    const DashboardScreen(),
     const FaultScreen(),
     const AccountScreen(
       userDetails: {},
@@ -305,95 +304,6 @@ class ServicesScreen extends StatelessWidget {
       ),
       body: const Center(
         child: Text('Services Screen'),
-      ),
-    );
-  }
-}
-
-class DashBoardScreen extends StatelessWidget {
-  DashBoardScreen({super.key});
-
-  final CarData carData = CarData();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Dashboard'),
-        centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
-        toolbarHeight: 80,
-        titleTextStyle: const TextStyle(
-          fontWeight: FontWeight.bold,
-          fontStyle: FontStyle.italic,
-          fontSize: 20,
-        ),
-        actions: [
-          IconButton(
-            color: Colors.white,
-            icon: const Icon(Icons.notifications),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => NotificationScreen()),
-              );
-            },
-          ),
-        ],
-      ),
-      body: Stack(
-        children: [
-          Image.asset('assets/car.jpg',
-              fit: BoxFit.cover,
-              width: double.infinity,
-              height: double.infinity),
-          // Speedometer gauge
-          Center(
-            child: Container(
-              width: 250,
-              height: 250,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.white.withOpacity(0.2),
-                border: Border.all(color: Colors.white, width: 10),
-              ),
-              child: Stack(
-                children: [
-                  Align(
-                    alignment: Alignment.center,
-                    child: SvgPicture.asset('assets/svg/speedometer_arc.svg',
-                        width: 200),
-                  ),
-                  Transform(
-                    alignment: FractionalOffset.center,
-                    transform: Matrix4.identity()
-                      ..rotateZ(carData.speed * 3.14 / 180),
-                    child: SvgPicture.asset(
-                        'assets/svg/speedometer_needle.svg'), // Adjust width if needed
-                  ),
-                  const Center(
-                    child: Text(
-                      '180', // Replace with actual speed value (for reference)
-                      style: TextStyle(
-                        fontSize: 40,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Positioned(
-            bottom: 50,
-            right: 30,
-            child: SvgPicture.asset(
-              'assets/svg/fuel_gauge.svg',
-              width: 100,
-            ),
-          ),
-        ],
       ),
     );
   }
